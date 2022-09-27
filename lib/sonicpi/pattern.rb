@@ -20,13 +20,12 @@ module PatternMethods
     if block_given?
       if res
         at do
-        block.()
+          block.()
         end
       end
     end
     return res
   end
-
 
   def on (divisor=1, offset=0)
     return (look % divisor) + offset
@@ -36,12 +35,12 @@ module PatternMethods
     idx = (look % m)*n
     str.split(//).filter{|x| x != '|'}.join("")[idx..idx+(n-1)]
   end
-
+  
   def pspread (num_accents, size)
     spread(num_accents, size).map{|b| b ? "x":"-"}.join("")
   end
 
-    def index(m, n, operator="+")
-      eval("look % #{m} " + operator + "#{n}")
-    end
+  def index(m, n, operator="+")
+    eval("look % #{m} " + operator + "#{n}")
+  end
 end

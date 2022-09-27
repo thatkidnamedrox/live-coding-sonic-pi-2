@@ -26,4 +26,5 @@ end
 
 SonicPi::Core::RingVector.class_eval do
   include RandomMethods
+  include RingMethods
 end
